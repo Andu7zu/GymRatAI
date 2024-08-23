@@ -18,8 +18,8 @@ public class Main {
         String prompt = """
                 You're my nutritionist. I need you to personalize a meal plan for me and include how many calories each meal has. I'm looking for an example of meals based on my preferences, including my liked/disliked food, alergies and my diet goal. I'm trying to
                 """ + pers.getDietGoal() + ". I'm a " + pers.getAge() + " years old, " + pers.getGender() + " and I weight "+ pers.getWeight() + " kg, I'm " + pers.getHeight() + " cm tall. My daily activity level is : "
-                + pers.getActivityLevel() + " this should be taken in consideration as well. I like eating " + pers.getLikedFood() + " and I don't really enjoy eating " + pers.getDislikedFood() + ". Make the plan so it has  " + pers.getMealsPerDay()
-                + " meals per day. Make sure to make me the plan for the entire week Monday-Sunday and mark each day like this **Monday**, **Tuesday** , **Wednesday** etc";
+                + pers.getActivityLevel() + " this should be taken in consideration as well. I like eating " + pers.getLikedFood() + " and I don't really enjoy eating " + pers.getDislikedFood() + ". Make the plan to have exactly " + pers.getMealsPerDay()
+                + " meal/s per day. Make sure to make me the plan for the entire week Monday-Sunday and mark each day like this **Monday**, **Tuesday** , **Wednesday** etc";
 
         if(!pers.getAlergies().contains("null"))
             prompt +=  " Make sure to avoid the following foods by all means: " + pers.getAlergies() + " cause I have alergies.";
