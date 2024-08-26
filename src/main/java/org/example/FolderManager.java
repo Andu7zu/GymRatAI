@@ -34,10 +34,19 @@ public class FolderManager {
         File docxFile = new File(directory, docxFileName);
 
         try (XWPFDocument document = new XWPFDocument()) {
+            // Create a new paragraph in the document
             XWPFParagraph paragraph = document.createParagraph();
             XWPFRun run = paragraph.createRun();
-            run.setText(response);
 
+            // Split the response string by newline characters to preserve paragraph structure
+            String[] lines = response.split("\n");
+
+            for (String line : lines) {
+                run.setText(line);
+                run.addBreak(); // Adds a new line for each line in the original string
+            }
+
+            // Write the document to the file
             try (FileOutputStream out = new FileOutputStream(docxFile)) {
                 document.write(out);
             }

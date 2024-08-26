@@ -33,7 +33,7 @@ public class Main {
         folderManager.createDocxFile(mealPrepResponse);
 
         String template = """
-                Host: “This meal was personalized for [NAME], if you want one tailored just for you, make sure to drop a comment and fill the form in BIO. Now let’s start with the delicious meals.” (10 seconds)
+                Host: “This meal was personalized for %s, if you want one tailored just for you, make sure to drop a comment and fill the form in BIO. Now let’s start with the delicious meals.” (10 seconds)
                                 
                 Monday
                 (Visuals of breakfast food appear on screen)
@@ -76,7 +76,7 @@ public class Main {
                 Outro
                 Host: "That's it for this week! Remember to stay hydrated and listen to your body throughout your meal plan. Thanks for watching!"
                                                               
-                """;
+                """.formatted(pers.getName());
         String script = model.generate("Make a video script that's maximum 1 minute and 40 seconds long, following this template: " + template + " but using only the following meals for each day. Here's the meals you should use': " + mealPrepResponse);
         System.out.println(script);
 
