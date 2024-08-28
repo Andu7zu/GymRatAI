@@ -34,7 +34,7 @@ public class Main {
 
         String template = """
                 Host: “This meal was personalized for %s, if you want one tailored just for you, make sure to drop a comment and fill the form in BIO. Now let’s start with the delicious meals.” (10 seconds)
-                                
+
                 Monday
                 (Visuals of breakfast food appear on screen)
                 Host: "Good morning! Today's breakfast is greek yogurt with banana, almond butter, and granola, for a total of 550 calories." (5 seconds)
@@ -75,10 +75,12 @@ public class Main {
                 Host: "Remember to stay hydrated and grab one of these snacks: fresh fruits, cut veggies with hummus, Greek yogurt with mixed nuts and seeds, or hard-boiled eggs. Each snack has approximately 150-200 calories and 5-10g of protein." (5 seconds)
                 Outro
                 Host: "That's it for this week! Remember to stay hydrated and listen to your body throughout your meal plan. Thanks for watching!"
-                                                              
+
                 """.formatted(pers.getName());
         String script = model.generate("Make a video script that's maximum 1 minute and 40 seconds long, following this template: " + template + " but using only the following meals for each day. Here's the meals you should use': " + mealPrepResponse);
         System.out.println(script);
+
+
 
     }
 }

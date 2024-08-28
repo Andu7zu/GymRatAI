@@ -25,6 +25,11 @@
             <artifactId>okhttp</artifactId>
             <version>4.9.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
 
 <!--        Dependency for docx generator-->
         <dependency>
